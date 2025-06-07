@@ -1,0 +1,104 @@
+🔗 STRING Database User Guide
+(Search Tool for the Retrieval of Interacting Genes/Proteins)
+Website: https://string-db.org
+
+🧬 What is STRING?
+STRING is a database and web resource that provides:
+
+Known and predicted protein-protein interactions
+
+Interaction networks from experimental data, databases, co-expression, and text mining
+
+Support for many organisms and custom protein lists
+
+🛠️ Getting Started
+1. Visit STRING
+Go to: https://string-db.org
+
+2. Input Options
+You can search by:
+
+Single protein name (e.g. WRKY33)
+
+List of gene/protein names
+
+Upload files with identifiers (e.g. FASTA, CSV)
+
+Select:
+
+Organism (e.g., Arabidopsis thaliana, Homo sapiens, or your organism of interest)
+
+🧾 Using STRING: Step-by-Step
+🟦 A. Single Gene/Protein Search
+Go to the homepage.
+
+In the Search box, type a gene or protein (e.g., WRKY33) and select the correct organism.
+
+Click “Search”.
+
+You'll see a network of interactors based on:
+
+Experimental evidence
+
+Predicted associations
+
+Text mining
+
+Databases
+
+🟨 B. Multiple Protein List
+Click “Multiple proteins” on the homepage.
+
+Paste your list of protein names or identifiers.
+
+Choose the correct organism.
+
+Click “Continue”.
+
+STRING will build a network showing connections between your input proteins and their partners.
+
+🟥 C. Upload Your Data
+Click on the “Upload” tab.
+
+Provide a file with your gene/protein list.
+
+Choose your organism and settings.
+
+STRING will generate the interaction network.
+
+🔍 Customization Options
+Confidence score threshold: Adjust interaction strength (default is 0.4 = medium confidence).
+
+Network depth: Limit or expand interactions (e.g., first shell, second shell).
+
+View options: You can color by interaction source, structure, or evidence type.
+
+💾 Export & Download
+You can download:
+
+Images (PNG, SVG)
+
+Network tables
+
+Protein interaction data
+
+Cytoscape-compatible files for further analysis
+
+🧪 Advanced Tools
+Enrichment Analysis: Shows GO terms, KEGG pathways, and domains enriched in your list.
+
+Cluster Analysis: Finds functionally connected groups.
+
+Cytoscape Plugin: Use STRING networks within Cytoscape.
+
+🧠 Tips
+Use official gene/protein symbols for your organism.
+
+You can use UniProt IDs, NCBI gene symbols, or ENSEMBL IDs.
+
+For custom organisms or unpublished data, use user-uploaded networks with caution.
+
+📚 Citation
+If you use STRING in your research, cite:
+
+Szklarczyk, D., et al. (2023). STRING v12: protein–protein interaction networks, functional enrichment analysis and comparative interactomics. Nucleic Acids Research, 51(D1), D638–D646. https://doi.org/10.1093/nar/gkac1000
