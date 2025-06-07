@@ -1,0 +1,74 @@
+🧬 OrthoFinder Guide Using WRKY Data
+✅ Prerequisites
+Before starting, make sure you have:
+
+OrthoFinder installed in a conda environment (I was using orthofinder_env)
+
+Protein FASTA files for all species, named clearly with the .fas or .faa extension
+
+Each FASTA file should contain protein sequences with headers formatted like this:
+
+shell
+Copy
+>GeneID SpeciesName
+📁 Input Directory Structure
+Your input folder contains the following files:
+
+
+/mnt/c/Users/Maryam/Downloads/WRKY-orthofinder/fastafiles/
+├── Arabidopsis thaliana.protein.fas
+├── Eucalyptus grandis.protein.fas
+├── Metrosideros polymorpha var. incana.protein.fas
+└── Saro.updated.proteinFullname.fas
+You ran OrthoFinder inside this folder.
+
+⚙️ Running OrthoFinder
+From within the directory containing your FASTA files:
+
+conda activate orthofinder_env
+orthofinder -f .
+This tells OrthoFinder to:
+
+Search all .fas/.faa files in the current directory
+
+Automatically detect orthologs, infer orthogroups, and build gene trees
+
+🕘 Runtime Log (Summary)
+
+Started OrthoFinder version 2.5.5
+Command Line: orthofinder -f .
+Species:
+  - Arabidopsis thaliana
+  - Eucalyptus grandis
+  - Metrosideros polymorpha var. incana
+  - Syzygium aromaticum (Saro)
+
+Results Directory:
+  Results_Feb05_1/
+📂 Output Directory Structure
+After OrthoFinder completes, results are saved in:
+
+
+Results_Feb05_1/
+├── Orthogroups/
+│   ├── Orthogroups.txt
+│   ├── Orthogroups.tsv
+│   ├── Orthogroups.GeneCount.tsv
+│   └── N0.tsv (orthogroups in last common ancestor)
+├── Orthologues/
+│   ├── Orthologues_SpeciesPairwise
+│   └── Single_Copy_Orthologue_Sequences/
+├── Species_Tree/
+│   └── SpeciesTree_rooted.txt
+├── Gene_Trees/
+│   └── *.tree files
+└── Statistics_Overall.tsv
+📌 Important Output Files
+File	Description
+Orthogroups/Orthogroups.txt	Lists all orthogroups and their member genes
+Orthogroups/Orthogroups.GeneCount.tsv	Matrix of gene counts per species per orthogroup
+Orthologues/Orthologues_SpeciesPairwise	Orthologous gene pairs between each species
+Orthogroups/Orthogroups_SingleCopyOrthologues.txt	Orthogroups with exactly one gene from each species
+Gene_Trees/	Phylogenetic trees for each orthogroup
+Species_Tree/SpeciesTree_rooted.txt	Inferred species tree
+clusters_OrthoFinder_I1.5.txt_id_pairs.txt	Used for pairwise selection analysis (Codeml etc.)
