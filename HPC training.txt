@@ -1,0 +1,77 @@
+HPC Training – Getting Started Guide
+Welcome to the HPC training session! This guide will help you with logging into the HPC system, transferring files, submitting jobs, and logging out safely.
+
+🖥️ Logging into HPC
+Open your terminal (on Mac/Linux) or use PuTTY (for Windows users).
+
+Connect to the HPC using:
+
+ssh Username@cherry-creek.nscee.edu
+Enter your password when prompted.
+
+✅ You are now logged into the HPC environment.
+
+🚪 Logging Out of HPC
+To safely log out:
+
+exit
+💾 Transferring Files to HPC
+To transfer a folder from your local computer to the HPC:
+
+scp -r your_folder_name hadi@cherry-creek.nscee.edu:/path/to/destination_folder
+Replace your_folder_name with the folder you want to copy.
+
+Replace /path/to/destination_folder with the desired path on the HPC.
+
+🧰 Job Submission (PBS)
+Jobs on the HPC are submitted using PBS job scripts. Here's how:
+
+1. Create a PBS Script
+Create a file called job.pbs with the following format:
+
+#!/bin/bash
+#PBS -N my_job_name
+#PBS -l nodes=1:ppn=4
+#PBS -l walltime=02:00:00
+#PBS -l mem=16gb
+#PBS -q batch
+#PBS -o output.log
+#PBS -e error.log
+#PBS -V
+
+cd $PBS_O_WORKDIR
+module load your_module
+./your_script.sh
+2. Submit the Job
+Once your .pbs script is ready, submit it using:
+
+qsub job.pbs
+3. Check Job Status
+To check the status of your submitted jobs:
+
+
+qstat -u your_username
+4. Cancel a Job
+To cancel a job:
+
+
+qdel job_id
+🪟 For Windows Users
+Install PuTTY for SSH access:
+
+Download from: https://www.putty.org
+
+Hostname: cherry-creek.nscee.edu
+
+Port: 22
+
+🧠 Quick Reference Commands
+Command	Purpose
+cd	Change directory
+ls	List files
+pwd	Show current path
+nano filename	Edit file with Nano editor
+chmod +x file	Make a script executable
+qstat	Check job status
+qdel <job_id>	Cancel submitted job
+
